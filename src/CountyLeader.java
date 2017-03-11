@@ -11,8 +11,9 @@ import java.util.Scanner;
 public class CountyLeader {
 
 	public static void main(String[] args) throws FileNotFoundException {
-		Scanner sc = new Scanner(new File("A-small-practice.in")); 
-		PrintStream out=System.out;
+		//new File("A-large-practice.in")
+		Scanner sc = new Scanner(new File("A-large-practice.in")); 
+		final PrintStream out=System.out;
 		PrintStream ps=new PrintStream(new File("output.txt"));
 		System.setOut(ps);
 		int T=Integer.parseInt(sc.nextLine());
@@ -28,9 +29,23 @@ public class CountyLeader {
 					char [] ch1 = o1.toCharArray();
 					char [] ch2 = o2.toCharArray();
 					for(char c: ch1)
+					{
+						if(c==' ')
+						{
+							continue;
+						}
 						set1.add(c);
+					}
+						
 					for(char c: ch2)
+					{
+						if(c==' ')
+						{
+							continue;
+						}
 						set2.add(c);
+					}
+						
 					if(set1.size()==set2.size())
 					{
 						return o1.compareTo(o2);
