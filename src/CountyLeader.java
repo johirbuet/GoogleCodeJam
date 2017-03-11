@@ -49,6 +49,7 @@ public class CountyLeader {
 			}
 			System.out.println("Case #"+t+": "+pq.poll());
 		}
+		sc.close();
 	}
 
 }
